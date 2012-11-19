@@ -5,7 +5,6 @@
 package Pipes;
 
 import Filters.PushFilter;
-import org.apache.log4j.Logger;
 
 /**
  * Eine Pipe mit einem input, pushed Daten in eine Richtung
@@ -30,7 +29,6 @@ public class SinglePushPipe<T> implements PushPipe<T> {
     @Override
     public void push(T data) {
     //System.out.println("destination: " + _destination + "; data: " + data);
-        Logger.getLogger(SinglePullPipe.class).debug("destination: " + _destination + "; data: " + data);
     _destination.newInput(data);
     }
     
